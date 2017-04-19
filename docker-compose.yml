@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+    webqq:
+     image: webqq
+     container_name: webqq
+     volumes:
+       - ./tmp:/tmp
+       - ./knowledge:/knowledge
+     environment:
+      - MOJO_WEBQQ_LOG_ENCODING=utf8
+      - MOJO_WEBQQ_ACCUNT=315368279
+     command: perl /root/login.pl
