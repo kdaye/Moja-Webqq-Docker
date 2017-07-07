@@ -4,7 +4,7 @@ WORKDIR /root
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update && apt-get install -y unzip libssl-dev
-RUN cpanm -vn --mirror http://mirrors.163.com/cpan/ Encode::Locale IO::Socket::SSL Mojolicious Mojo::SMTP::Client MIME::Lite
+RUN cpanm -vn Encode::Locale IO::Socket::SSL Mojolicious Mojo::SMTP::Client MIME::Lite
 RUN wget -q https://github.com/sjdy521/Mojo-Webqq/archive/master.zip -OMojo-Webqq.zip \
     && unzip -qo Mojo-Webqq.zip \
     && cd Mojo-Webqq-master \
